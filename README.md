@@ -1,0 +1,1 @@
+learning go, if you have any suggestions on code cleanup/go style let me know! this is a WIP.
