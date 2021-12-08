@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"strings"
 )
 
 // Reads input file and outputs a slice of strings
@@ -39,4 +40,36 @@ func StringsToInts(strings []string) []int {
 		ints = append(ints, parsedInt)
 	}
 	return ints
+}
+
+func StringsToDigits(arr []string) [][]int {
+	var input [][]int
+	for _, s := range arr {
+		var digits []int
+		for _, c := range strings.Split(s, "") {
+			d, err := strconv.Atoi(c)
+			if err != nil {
+				panic("Error while converting a single digit to an int")
+			}
+			digits = append(digits, d)
+		}
+		input = append(input, digits)
+	}
+	return input
+}
+
+func DigitArrayToString(digits []int) string {
+	var str string
+	for i := range digits {
+		str += strconv.Itoa(digits[i])
+	}
+	return str
+}
+
+func BinaryToDecimal(binary string) int {
+	dec, err := strconv.ParseInt(binary, 2, 64)
+	if err != nil {
+		panic("Converting binary to decimal failed")
+	}
+	return int(dec)
 }
