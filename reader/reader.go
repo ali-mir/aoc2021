@@ -30,12 +30,12 @@ func Read() []string {
 }
 
 // Helpful functions to operate on input slices
-func StringsToInts(strings []string) []int {
+func StringsToInts(arr []string) []int {
 	var ints []int
-	for _, s := range strings {
+	for _, s := range arr {
 		parsedInt, err := strconv.Atoi(s)
 		if err != nil {
-			panic("Converting string to int failed")
+			panic("Converting string to int failed:")
 		}
 		ints = append(ints, parsedInt)
 	}
@@ -72,4 +72,17 @@ func BinaryToDecimal(binary string) int {
 		panic("Converting binary to decimal failed")
 	}
 	return int(dec)
+}
+
+// Compare two int slices
+func EqualSlices(a, b []int) bool {
+    if len(a) != len(b) {
+        return false
+    }
+    for i, v := range a {
+        if v != b[i] {
+            return false
+        }
+    }
+    return true
 }
