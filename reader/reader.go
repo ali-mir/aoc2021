@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"math"
 )
 
 // Reads input file and outputs a slice of strings
@@ -89,4 +90,13 @@ func EqualSlices(a, b []int) bool {
         }
     }
     return true
+}
+
+// Math
+func Abs(n int) int {
+	return int(math.Abs(float64(n)))
+}
+
+func Round(n float64) int {
+    return int(math.Floor(n + 0.5))
 }

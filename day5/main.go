@@ -3,7 +3,6 @@ package main
 import (
 	r "aoc2021/reader"
 	"fmt"
-	"math"
 	"strings"
 )
 
@@ -152,7 +151,7 @@ func markMapDiagonalLines(p Pair, m map[Point]int) {
 	startX, endX := p.start.x, p.end.x
 	startY, endY := p.start.y, p.end.y
 
-	if math.Abs(float64(endX-startX)) != math.Abs(float64(endY-startY)) {
+	if r.Abs(endX-startX) != r.Abs(endY-startY) {
 		panic("Diagonal line is not at 45 degree angle")
 	}
 
