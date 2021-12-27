@@ -29,14 +29,18 @@ func Read() []string {
 	return input
 }
 
+func StringToInt(s string) int {
+	i, err := strconv.Atoi(s)
+	if err != nil {
+		panic("Converting string to int failed")
+	}
+	return i
+}
 // Helpful functions to operate on input slices
 func StringsToInts(arr []string) []int {
 	var ints []int
 	for _, s := range arr {
-		parsedInt, err := strconv.Atoi(s)
-		if err != nil {
-			panic("Converting string to int failed:")
-		}
+		parsedInt := StringToInt(s)
 		ints = append(ints, parsedInt)
 	}
 	return ints
