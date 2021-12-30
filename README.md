@@ -1,1 +1,1 @@
-if you have any suggestions on code cleanup/go style let me know! this is a WIP.
+this is a work in progress and the code isn't particularly clean. if you have any cleanup suggestions, let me know.
