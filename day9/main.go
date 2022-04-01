@@ -49,6 +49,7 @@ func findLows(h [][]int) []int {
 	return result
 }
 
+// this function is not clean at all
 func isLowestAdjacent(h [][]int, val, row, col int) bool {
 	isLowest := true
 	rowSize := len(h)

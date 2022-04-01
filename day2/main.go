@@ -8,9 +8,17 @@ import (
 )
 
 type command struct {
-	dir  string
+	dir  Direction
 	dist int
 }
+
+type Direction = string
+
+const (
+	Up      Direction   = "up"
+	Down                = "down"
+	Forward             = "forward"
+)
 
 func main() {
 	var commands []command
@@ -29,11 +37,11 @@ func main() {
 	depth := 0
 	for _, command := range commands {
 		switch command.dir {
-		case "down":
+		case Down:
 			depth += command.dist
-		case "up":
+		case Up:
 			depth -= command.dist
-		case "forward":
+		case Forward:
 			pos += command.dist
 		}
 	}

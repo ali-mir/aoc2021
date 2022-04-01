@@ -19,8 +19,6 @@ func main() {
 
 	// Part 2
 	count = 0
-	// A real "woah" moment for me: realizing the larger value between
-	// index i and i-3 dictates whether the second window is larger than the first.
 	for i := 3; i < len(input); i++ {
 		if input[i] > input[i-3] {
 			count++
